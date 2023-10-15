@@ -46,3 +46,79 @@ let vsorted = counts.sorted(by: ascending)
 print(cnt)
 let scount = counts.sorted(by: <)
 print(scount)
+
+//[11:33 PM] Seelam,Mounica
+
+func makePopulationTracker (forInitialPopulation population: Int) -> (Int) -> Int{
+
+ 
+
+var totalPopulation = population
+
+ 
+
+func populationTracker (growth: Int) -> Int{ totalPopulation += growth
+
+ 
+
+return totalPopulation
+
+ 
+
+}
+
+ 
+
+return populationTracker
+
+ 
+
+}
+
+ 
+
+var currentPopulation = 5_422
+
+ 
+
+let growBy = makePopulationTracker (forInitialPopulation: currentPopulation)
+
+ 
+
+growBy (500)
+
+ 
+
+growBy (500)
+
+print(currentPopulation)
+
+
+currentPopulation=growBy (500) // 6922
+
+ 
+
+let anotherGrowBy = growBy
+anotherGrowBy (500) // 7422
+
+ 
+
+print(currentPopulation)
+let numbers = [12,23,4,45]
+let mapped = numbers.map{
+    return $0 * 2
+}
+print(mapped)
+
+var message: String?
+//message = ""
+if let messageBody = message{
+
+if let messageInteger = Int (messageBody) {
+    print("\(messageBody): \(messageInteger)")
+}
+
+}else{
+    print("No message.")
+    
+}
